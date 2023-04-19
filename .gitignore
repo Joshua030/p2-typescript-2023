@@ -1,6 +1,4 @@
-node_modules
-build
-npm-debug.log
-.nyc
-.env
-.DS_Store
+*node_modules/*
+*.html
+/build
+build/index.js
