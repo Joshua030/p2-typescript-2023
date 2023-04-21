@@ -16,7 +16,8 @@ export const getData = async (size: number) => {
     const json = await response.json();
     const data: MagicCard[]= json.cards;
     if(data){
-      const filterData = data?.map(
+ const filterData = data?.filter(({imageUrl})=>imageUrl!== undefined)
+      const mapData = filterData?.map(
         ({ name, manaCost, type, imageUrl, rarity, number, id }) => ({
           name,
           manaCost,
@@ -27,7 +28,7 @@ export const getData = async (size: number) => {
           imageUrl,
         })
       );
-      return filterData ;
+      return mapData ;
     } 
     return [{  name: "",
       type: "",

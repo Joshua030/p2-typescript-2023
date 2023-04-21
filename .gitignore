@@ -1,4 +1,3 @@
 *node_modules/*
 *.html
 /build
-build/index.js

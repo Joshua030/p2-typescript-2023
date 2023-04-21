@@ -6,8 +6,8 @@ import { writeFile } from "fs/promises";
 const buildHtml= async() =>{
   const data= await getData(50);
   const html = render(data);
-  await writeFile('users.html', html);
-  
+  await writeFile('cards.html', html);
+  await writeFile('card.html', 'prueba');
 }
 
 buildHtml();

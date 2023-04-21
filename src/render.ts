@@ -7,7 +7,9 @@ export const render = (data:MagicCard[]) => {
 <html>
  ${head()}
   <body>
+  <div class="cards-container">
 ${createCards(data)}
+</div>
   </body>
 </html>`;
 };
