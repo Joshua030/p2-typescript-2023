@@ -44,6 +44,7 @@ h3 {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  transition: all 1s ease-out;
 }
 
 .card::after {
@@ -115,4 +116,18 @@ h3 {
 .description-container{
   align-self: center;
   padding: 1rem;
+}
+
+.loading{
+  opacity: 0;
+}
+
+.loading-message{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 1s ease-out;
+  font-size: 5rem;
+  font-weight: 600;
 }

@@ -1,4 +1,4 @@
-import { MagicCardDescription, createCard } from "./helpers/createCard";
+import { createCard } from "./helpers/createCard";
 import { createCards } from "./helpers/createCards";
 import { head } from "./helpers/head";
 import { MagicCard } from "./useFetch";
@@ -15,12 +15,12 @@ ${createCards(data)}
 </html>`;
 };
 
-export const renderDtaById = (data:MagicCardDescription) => {
+export const renderDtaById = ()=> {
   return `
 <html>
  ${head()}
   <body>
-${createCard(data)}
+${createCard()}
   </body>
 </html>`;
 };

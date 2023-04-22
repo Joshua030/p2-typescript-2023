@@ -1,4 +1,4 @@
-import { MagicCardDescription } from "./helpers/createCard";
+
 
 export interface MagicCard {
   name: string;
@@ -52,12 +52,11 @@ export const getData = async (size: number) => {
   }
 };
 
-export const getDataById =async () =>{
-  const response = await fetch(
-    `http://api.magicthegathering.io/v1/cards/8ac972b5-9f6e-5cc8-91c3-b9a40a98232e`
-  );
-  const json = await response.json();
-  const data: MagicCardDescription= json.card;
-return data;
+// export const getDataById =async () =>{
+//   const id = localStorage.getItem('id');
+//   const response = await fetch(`http://api.magicthegathering.io/v1/cards/${id}`);
+//   const json = await response.json();
+//   const data: MagicCardDescription= json.card;
+// return data;
  
-}
+// }
