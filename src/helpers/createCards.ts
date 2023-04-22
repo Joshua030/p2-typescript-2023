@@ -15,11 +15,26 @@ export const createCards = (data:MagicCard[]) => {
         <p>${item.rarity}</p>
         <div class="information-label"><h3>mana cost</h3></div>
         <p>${item.manaCost}</p>
-        <a href="/card.html?id=${item.id}">...Details</a>
+        <a href="/card.html?id=${item.id}" id="detail-button-${item.id}">...Details</a>
       </div>
       </div>`;
     }
-    return html;
+
+    let htmlScript = `${html}
+    <script>
+      const key = 'id';
+      const anchors = document.querySelectorAll('[id^="detail-button-"]');
+      for (const anchor of anchors) {
+        anchor.addEventListener('click', (event) => {
+          event.preventDefault();
+          const itemId = anchor.getAttribute('id').split('-').slice(2).join("-");
+          localStorage.setItem(key, itemId);
+          window.location.href = anchor.href;
+        });
+      }
+    </script>`;
+
+  return htmlScript;
 }
 
 // name,
